@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moving Button</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      position: absolute;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="moveButton(this)">Click me!</button>
+
+<script>
+  function moveButton(btn) {
+    const maxX = window.innerWidth - btn.offsetWidth;
+    const maxY = window.innerHeight - btn.offsetHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    btn.style.left = randomX + "px";
+    btn.style.top = randomY + "px";
+  }
+</script>
+
+</body>
+</html>
